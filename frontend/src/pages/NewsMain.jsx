@@ -22,7 +22,7 @@ const NewsMain = () => {
           <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
 
           <p className="mt-4 text-xl font-medium text-gray-700 animate-pulse">
-            📰 Loading the latest headlines...
+            📰 Loading the latest headlines,It may takes time...
           </p>
         </div>
       ) : (
