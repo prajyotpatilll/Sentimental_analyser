@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-
 export const AppContext = createContext();
 
 const AppContextProvide = (props) => {
@@ -15,7 +14,9 @@ const AppContextProvide = (props) => {
   const fetchNews = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${backendURL}/news?category=${category}`);
+      const response = await axios.get(
+        `${backendURL}/news?category=${category}`
+      );
 
       setArticles(response.data);
     } catch (error) {
@@ -53,7 +54,7 @@ const AppContextProvide = (props) => {
     setSentimentFilter,
     handleCategoryChange,
     handleSentimentChange,
-    filteredArticles
+    filteredArticles,
   };
 
   return (
