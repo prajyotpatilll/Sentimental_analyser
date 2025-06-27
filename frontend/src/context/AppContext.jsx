@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const AppContext = createContext();
 
 const AppContextProvide = (props) => {
-  const backendURL = "https://sentimental-news-backend.onrender.com";
+  const backendURL = import.meta.env.VITE_BACKEND_URL;
   const [articles, setArticles] = useState([]);
   const [category, setCategory] = useState("general");
   const [loading, setLoading] = useState(false);
@@ -18,6 +18,8 @@ const AppContextProvide = (props) => {
       );
 
       setArticles(response.data);
+
+      console.log(articles)
     } catch (error) {
       console.error("Error fetching news:", error);
     } finally {
