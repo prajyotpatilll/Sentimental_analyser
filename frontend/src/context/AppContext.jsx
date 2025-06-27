@@ -4,8 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const AppContext = createContext();
 
 const AppContextProvide = (props) => {
-  const backendURL = import.meta.env.VITE_BACKEND_URL;
-
+  const backendURL = "https://sentimental-news-backend.onrender.com";
   const [articles, setArticles] = useState([]);
   const [category, setCategory] = useState("general");
   const [loading, setLoading] = useState(false);
