@@ -22,7 +22,7 @@ app.get('/news', async (req, res) => {
     try {
         const category = req.query.category || 'general'; // Default to 'general' if no category is provided
 
-        const newsResponse = await axios.get(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=5&apikey=${GNEWS_API_KEY}`);
+        const newsResponse = await axios.get(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=us&max=10&apikey=${GNEWS_API_KEY}`);
         const articles = newsResponse.data.articles;
 
         const sentimentResults = await Promise.all(articles.map(async (article) => {
