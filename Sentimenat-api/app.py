@@ -2,13 +2,14 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from textblob import TextBlob
 import os
+import logging
 
 app = Flask(__name__)
+logging.basicConfig(level=logging.INFO)
 
-# ✅ Only allow these domains
 CORS(app, resources={r"/*": {"origins": [
-    "http://localhost:3000",              # React local
-    "https://your-frontend-site.com"      # Your deployed frontend
+    "http://localhost:3000",
+    "https://sentimental-news-ai.vercel.app"
 ]}})
 
 @app.route('/sentiment', methods=['POST'])
@@ -19,6 +20,10 @@ def sentiment():
     polarity = blob.sentiment.polarity
     sentiment = 'Positive' if polarity > 0 else 'Negative' if polarity < 0 else 'Neutral'
     return jsonify({'sentiment': sentiment})
+
+@app.route('/')
+def health_check():
+    return 'OK', 200
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
