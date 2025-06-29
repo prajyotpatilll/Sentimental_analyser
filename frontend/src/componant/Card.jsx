@@ -33,7 +33,7 @@ const Card = ({ article }) => {
 
             {/* Source and Sentiment on Front Side */}
             <div className="flex justify-between items-center mt-4">
-              {/* <a
+              <a
                 href={article.source.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -41,7 +41,7 @@ const Card = ({ article }) => {
                 onClick={(e) => e.stopPropagation()} // Prevent card flip on link click
               >
                 {article.source.name}
-              </a> */}
+              </a>
 
               <span
                 className={`px-3 py-1 text-sm font-medium rounded-full ${
@@ -68,7 +68,7 @@ const Card = ({ article }) => {
 
           {/* Source and Sentiment on Back Side */}
           <div className="flex justify-between items-center mt-4">
-            {/* <a
+            <a
               href={article.source.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -76,7 +76,7 @@ const Card = ({ article }) => {
               onClick={(e) => e.stopPropagation()} // Prevent card flip on link click
             >
               {article.source.name}
-            </a> */}
+            </a>
 
             <span
               className={`px-3 py-1 text-sm font-medium rounded-full ${

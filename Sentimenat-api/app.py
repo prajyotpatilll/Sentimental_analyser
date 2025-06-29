@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 
 CORS(app, resources={r"/*": {"origins": [
     "http://localhost:3000",
-    "https://sentimental-news-ai.vercel.app"
+    "https://sentimental-news-backend.onrender.com"
 ]}})
 
 @app.route('/sentiment', methods=['POST'])
